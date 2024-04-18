@@ -47,7 +47,7 @@
     </div>
 
     <form action="../qr/form.html" method="get">
-        <input type="submit" value="Generate New Code">
+        <input type="submit" value="Generate New QR Code">
     </form>
 </body>
 
