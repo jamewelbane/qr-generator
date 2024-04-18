@@ -30,7 +30,7 @@
             font-weight: bold;
         }
         input[type="text"] {
-            width: 100%;
+            width: calc(100% - 20px); /* Adjusted width for better fit */
             padding: 10px;
             margin-top: 5px;
             margin-bottom: 15px;
@@ -39,9 +39,10 @@
             box-sizing: border-box;
         }
         input[type="submit"] {
+            width: 100%; /* Make button full-width */
             background-color: #4caf50;
             color: #fff;
-            padding: 10px 20px;
+            padding: 10px;
             border: none;
             border-radius: 3px;
             cursor: pointer;
@@ -49,6 +50,14 @@
         }
         input[type="submit"]:hover {
             background-color: #45a049;
+        }
+
+        /* Responsive styles */
+        @media only screen and (max-width: 600px) {
+            .container {
+                margin: 20px auto;
+                padding: 10px;
+            }
         }
     </style>
 </head>
