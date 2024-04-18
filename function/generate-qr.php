@@ -13,7 +13,7 @@ if(isset($_POST['url'])) {
     // Validate URL
     if(validateURL($url)) {
         // Generate QR code
-        $qrFile = 'qr_codes/'.uniqid().'.png'; // Unique filename for each QR code
+        $qrFile = '../qr_codes/'.uniqid().'.png'; // Unique filename for each QR code
         QRcode::png($url, $qrFile);
         
         // Display QR code image
