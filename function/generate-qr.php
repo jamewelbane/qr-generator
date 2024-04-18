@@ -1,5 +1,5 @@
 <?php
-require 'phpqrcode/qrlib.php';
+require '../vendor/phpqrcode/qrlib.php';
 
 // Function to validate URL
 function validateURL($url) {
