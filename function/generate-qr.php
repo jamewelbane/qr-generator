@@ -11,7 +11,7 @@
 <body>
     <div id="qrCodeContainer">
         <?php
-        session_start(); // Start the session
+        session_start(); 
 
         require '../vendor/phpqrcode/qrlib.php';
 
@@ -21,7 +21,6 @@
             return filter_var($url, FILTER_VALIDATE_URL);
         }
 
-        // Check if URL is submitted
         if (isset($_POST['url'])) {
             $url = $_POST['url'];
 
@@ -29,7 +28,7 @@
             if (validateURL($url)) {
                 // Generate QR code
                 $qrTempFile = '../qr_codes/temp.png'; // Temporary file path
-                $size = 10; // Change the size here (e.g., 10 for a larger QR code)
+                $size = 10; 
                 QRcode::png($url, $qrTempFile, QR_ECLEVEL_L, $size);
 
                 // Store the temporary file path in the session
@@ -42,7 +41,6 @@
             }
         }
         ?>
-
     </div>
 
     <form action="../qr/form.html" method="get">
