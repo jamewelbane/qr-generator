@@ -15,7 +15,7 @@ include '../overlay.html';
 <body>
     <div class="container">
         <h2>QR Code Generator</h2>
-        <form id="qrForm" action="../function/generate-qr.php" method="post">
+        <form id="qrForm" action="../function/generate-qr" method="post">
             <label for="url">Enter URL:</label><br>
             <input type="text" id="url" name="url" required><br><br>
             <input type="submit" value="Generate QR Code">

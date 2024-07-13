@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<link rel="shortcut icon" type="image/png" href="../assets/images/icons/favicon.png">
 <?php
 include '../overlay.html';
 ?>
@@ -27,19 +28,17 @@ include '../overlay.html';
 
             // Validate URL
             if (validateURL($url)) {
-                // Generate QR code
-                $qrTempFile = '../qr_codes/temp.png'; // Temporary file path
+                // Generate a unique filename using a timestamp
+                $uniqueFilename = '../qr_codes/qr_' . time() . '.png';
                 $size = 10; 
-                QRcode::png($url, $qrTempFile, QR_ECLEVEL_L, $size);
+                QRcode::png($url, $uniqueFilename, QR_ECLEVEL_L, $size);
 
-                // Store the temporary file path in the session
-                $_SESSION['qrTempFile'] = $qrTempFile;
+                // Store the unique file path in the session
+                $_SESSION['qrUniqueFile'] = $uniqueFilename;
 
                 // Display the QR code image
-                echo '<img src="' . $qrTempFile . '" alt="QR Code">';
-
-          
-                echo '<a href="' . $qrTempFile . '" download="qr_code.png">Download QR Code</a>';
+                echo '<img src="' . $uniqueFilename . '" alt="QR Code">';
+                echo '<a href="' . $uniqueFilename . '" download="qr_code.png">Download QR Code</a>';
             } else {
                 echo 'Invalid URL. Please enter a valid URL.';
             }
