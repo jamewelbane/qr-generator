@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<?php
+include '../overlay.html';
+?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/qr-style.css">
     <title>QR Code Generator</title>
 </head>
-
 <body>
     <div id="qrCodeContainer">
         <?php
@@ -36,6 +37,9 @@
 
                 // Display the QR code image
                 echo '<img src="' . $qrTempFile . '" alt="QR Code">';
+
+          
+                echo '<a href="' . $qrTempFile . '" download="qr_code.png">Download QR Code</a>';
             } else {
                 echo 'Invalid URL. Please enter a valid URL.';
             }
@@ -43,9 +47,8 @@
         ?>
     </div>
 
-    <form action="../qr/form.html" method="get">
+    <form action="../qr/generate" method="get">
         <input type="submit" value="Generate New QR Code">
     </form>
 </body>
-
 </html>

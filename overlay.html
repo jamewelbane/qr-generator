@@ -1,0 +1,45 @@
+<style>
+     /* Style for overlay */
+     .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255); /* Initial background with opacity */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease; /* Transition for opacity change */
+        }
+
+</style>
+
+
+ <!-- Preloader overlay -->
+ <div class="overlay" id="preloader">
+    <l-spiral
+  size="100"
+  speed="0.9"
+  color="#4cb050" 
+></l-spiral>
+</div>
+
+<script>
+    window.addEventListener('load', function() {
+        // Show preloader
+        var preloader = document.getElementById('preloader');
+        preloader.style.opacity = '1'; 
+
+        setTimeout(function() {
+            preloader.style.opacity = '0'; 
+            setTimeout(function() {
+                preloader.style.display = 'none'; 
+            }, 500); 
+        }, 500); 
+    });
+</script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/ldrs/dist/auto/quantum.js"></script>
+
+<script type="module" src="https://cdn.jsdelivr.net/npm/ldrs/dist/auto/spiral.js"></script>
