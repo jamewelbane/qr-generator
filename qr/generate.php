@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+<link rel="shortcut icon" type="image/png" href="../assets/images/icons/favicon.png">
 <?php
 include '../overlay.html';
 ?>
 <head>
     <meta charset="UTF-8">
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/form-style.css">
     <title>QR Code Generator</title>
